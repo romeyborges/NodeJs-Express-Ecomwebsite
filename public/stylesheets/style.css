@@ -1,0 +1,47 @@
+/* body css */
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/*Navbar's css*/
+.navbar-nav {
+  margin-left: auto!important;
+}
+
+.navbar-brand{
+  font-weight: bold;
+}
+
+/*Product's css*/
+.col-sm-6{
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.thumbnail{
+  border: 2px;
+  color: balck;
+}
+.thumbnail img {
+  margin: auto;
+  max-height: 150px;
+} 
+
+.thumbnail description {
+  color: #7f7f7f; 
+}
+
+.price {
+  font-weight: bold;
+  font-size:  16px;
+}
+
+.btn-success{
+  font-weight: bold;
+  width: -webkit-fill-available;
+}

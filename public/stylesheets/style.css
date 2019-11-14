@@ -1,12 +1,9 @@
-/*Navbar's css*/
-.navbar-nav {
-  margin-left: auto!important;
+.navbar-expand-lg .navbar-collapse {
+  justify-content: flex-end;
 }
-
-.navbar-brand{
-  font-weight: bold;
+#shoppingText {
+  color: grey;
 }
-
 /*Product's css*/
 .col-sm-6{
   padding-top: 30px;

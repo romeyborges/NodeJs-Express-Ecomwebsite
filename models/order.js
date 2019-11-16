@@ -7,4 +7,43 @@ var schema = new Schema({
     address: {type: String, required: true},
 });
 
-module.exports = mongoose.model('order', schema);
+module.exports = mongoose.model('Order', schema);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//This is an e-commerce website created by Romanus Njogu Borges --- @romeyborges. 

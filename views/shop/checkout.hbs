@@ -1,12 +1,10 @@
 <div class="row d-flex justify-content-center">
-    <div class="col-sm-6 col-md-4">
-        
+    <div class="col-sm-6 col-md-4"> 
         <div class="card">
             <div class="card-body">
                 <form action="/shop/checkout" method="post" id="checkout-form">
                     <h1 class="text-center">Cash Checkout</h1>
                     <h6 class="text-center">Your Total: ${{total}}</h6><br>
-                    
                     <div id="charge-error" class="alert alert-danger d-none">
                         {{#if hasErrors }}
                         <div class="alert alert-danger"></div>
@@ -18,10 +16,8 @@
                     </div>
                     <div class="md-form">
                         <i class="fa fa-lock prefix grey-text"></i>
-                        <input type="text" id="name materialFormCardPasswordEx" name="Name" placeholder="Enter your Name" required class="form-control">
+                        <input type="text" id="name materialFormCardPasswordEx" name="name" placeholder="Enter your Name" required class="form-control">
                         <label for="materialFormCardPasswordEx" class="font-weight-light">Your Name</label>
-                    </div>
-
                     <div class="md-form">
                         <i class="fa fa-envelope prefix grey-text"></i>
                         <input type="email" id="email materialFormCardEmailEx" name="email" placeholder="Enter your email" required class="form-control">
@@ -29,15 +25,13 @@
                     </div>
                     
                     <div class="md-form">
-                        <input type="text" id="address materialFormCardPasswordEx" name="address" placeholder="Enter your Address" required class="form-control">
+                        <input type="address" id="address materialFormCardPasswordEx" name="address" placeholder="Enter your Address" required class="form-control">
                         <label for="materialFormCardAddressEx" class="font-weight-light">Your address</label>
                     </div>
                     <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-
                     <div class="text-center py-4 mt-3">
-                        <button class="btn btn-success" type="submit">Purchase</button>
+                        <button  class="btn btn-success" type="submit">Purchase</button>
                     </div>
-                    
                 </form>
             </div>
         </div>
@@ -46,6 +40,49 @@
         </div>
     </div>
 </div>
+<!--
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript" src="javascripts/checkout.js"></script>-->
 
-<script src="https://js.stripe.com/v2/"></script>
-<script type="text/javascript" src="javascripts/checkout.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- This is an e-commerce system created by Romanus Njogu Borges - @romeyborges -->
+
+
+
+
+
+
+
+
+
+
+
+
+

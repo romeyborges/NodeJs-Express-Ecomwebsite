@@ -13,3 +13,41 @@ var schema = new Schema({
 });
 
 module.exports = mongoose.model('Product', schema);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//This is an e-commerce website created by Romanus Njogu Borges --- @romeyborges. 

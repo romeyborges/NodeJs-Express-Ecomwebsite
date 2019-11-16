@@ -2,44 +2,68 @@ var Product = require('../models/product');
 
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/shopDB');
+mongoose.connect('mongodb://localhost:27017/shop');
 
 var products = [ 
     new Product({
-        imagePath:'https://cdn.cinematerial.com/p/297x/pebhweta/x-men-dark-phoenix-movie-poster-md.jpg',
-        title:'X-MEN Dark Phoneix',
-        description: 'Awesome movie',
-        price: 7
+        imagePath:'https://images-na.ssl-images-amazon.com/images/I/414UFCpXxAL.jpg',
+        title:'UMYOGO',
+        description: 'Fashion Sneakers',
+        price: 50,
+        color1: 'https://images-na.ssl-images-amazon.com/images/I/41WIV3zh-uL._SS36_.jpg',
+        c1Description: 'red',
+        color2: 'https://images-na.ssl-images-amazon.com/images/I/516SN5Tf4SL._SS36_.jpg',
+        c2Description: 'black'
     }),
     new Product({
-        imagePath:'https://cdn.cinematerial.com/p/297x/c4h7kwe1/spider-man-far-from-home-movie-poster-md.jpg?v=1567064685',
-        title:'Spider man Far from Home',
-        description: 'R U kidding me! Its the craziest!',
-        price: 10
+        imagePath:'https://images-na.ssl-images-amazon.com/images/I/61wiLUoH-QL._UY500_.jpg',
+        title:'FUSHITON',
+        description: 'Tennis Shoes',
+        price: 30,
+        color1: 'https://images-na.ssl-images-amazon.com/images/I/41GdPVLbX8L._SS47_.jpg',
+        c1Description: 'black',
+        color2: 'https://images-na.ssl-images-amazon.com/images/I/51cglkbvJPL._SS47_.jpg',
+        c2Description: 'grey'
     }),
     new Product({
-        imagePath:'https://cdn.cinematerial.com/p/297x/vbfr26yz/aladdin-movie-poster-md.jpg?v=1552401018',
-        title:'Aladdin',
-        description: 'Cool!',
-        price: 9
+        imagePath:'https://www.ubuy.ma/productimg/?image=aHR0cHM6Ly9pbWFnZXMtbmEuc3NsLWltYWdlcy1hbWF6b24uY29tL2ltYWdlcy9JLzcxZUxhaHIzOWVMLl9TUzQwMF8uanBn.jpg',
+        title:'Ezkrwxn',
+        description: 'Jogging Sneakers',
+        price: 45,
+        color1: 'https://images-na.ssl-images-amazon.com/images/I/41tEgjaI-QL._SS36_.jpg',
+        c1Description: 'blight green',
+        color2: 'https://images-na.ssl-images-amazon.com/images/I/41F9zAY%2BxtL._SS36_.jpg',
+        c2Description: 'white'
     }),
     new Product({
-        imagePath:'https://images-na.ssl-images-amazon.com/images/I/71niXI3lxlL._SY606_.jpg',
-        title:'Avengers End Game',
-        description: 'Best on earth!!',
-        price: 11
+        imagePath:'https://images-na.ssl-images-amazon.com/images/I/71RWUCU41yL._UY500_.jpg',
+        title:'Kapsen Running Shoes',
+        description: 'Sport Shoes for Workout Walking',
+        price: 28,
+        color1: 'https://images-na.ssl-images-amazon.com/images/I/415pmSFXJTL._SS36_.jpg',
+        c1Description: 'black w white',
+        color2: 'https://images-na.ssl-images-amazon.com/images/I/41slGA7C57L._SS36_.jpg',
+        c2Description: 'white'
     }),
     new Product({
-        imagePath:'https://cdn.cinematerial.com/p/297x/2j49f2xd/rocketman-movie-poster-md.jpg?v=1556895467',
-        title:'Rocket Man',
-        description: 'Could have been better',
-        price: 6
+        imagePath:'https://www.ubuy.za.com/productimg/?image=aHR0cHM6Ly9pbWFnZXMtbmEuc3NsLWltYWdlcy1hbWF6b24uY29tL2ltYWdlcy9JLzYxRnhUJTJCeWJsTkwuX1NTNDAwXy5qcGc.jpg',
+        title:'FOVSMO',
+        description: 'Casual Walking Running Shoes',
+        price: 36,
+        color1: 'https://images-na.ssl-images-amazon.com/images/I/51AU8MJU4VL._SS47_.jpg',
+        c1Description: 'green',
+        color2: 'https://images-na.ssl-images-amazon.com/images/I/51ivIU611HL._SS47_.jpg',
+        c2Description: 'grey'
     }),
     new Product({
-        imagePath:'https://cdn.collider.com/wp-content/uploads/2018/12/sonic-the-hedgehog-movie-poster.jpg',
-        title:'Sonic The Hedgehog',
-        description: 'Great Animation!',
-        price: 4
+        imagePath:'https://images-na.ssl-images-amazon.com/images/I/51yook7vbLL._AC_SY400_.jpg',
+        title:'BRONAX',
+        description: 'Energizing Cushioning Sneakers',
+        price: 44,
+        color1: 'https://images-na.ssl-images-amazon.com/images/I/41TYuM4TTOL._SS36_.jpg',
+        c1Description: 'black',
+        color2: 'https://images-na.ssl-images-amazon.com/images/I/41e4pUjYaaL._SS36_.jpg',
+        c2Description: 'white'
     })
 ];
 

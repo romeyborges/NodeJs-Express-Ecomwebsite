@@ -11,6 +11,10 @@ router.get('/profile', isLoggedIn, function(req, res, next) {
     res.render('user/profile');
 });
 
+/*router.get('/checkout', isLoggedIn, function(req, res, next) {
+    res.render('shop/checkout');
+});*/
+
 //check if user is logged in with account before accessing the profiles page. if not, redirects to home page
 router.get('/logout', isLoggedIn, function(req, res, next) {
     req.logout();
@@ -47,7 +51,19 @@ router.post('/signin', passport.authenticate('local.signin', {
     failureFlash: true
 }));
 
+/*//creating route for checkout page
+router.get('/checkout', function(req, res, next) {
+    var messages = req.flash('error');
+    res.render('shop/checkout', {csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0});
+});
   
+//creatinng authentication for checkout page
+router.post('/checkout', passport.authenticate('local.checkout', {
+    successRedirect: '/shop/success',
+    failureRedirect: '/shop/checkout',
+    failureFlash: true
+}));*/
+
 module.exports = router;
 
 //checks if user is logged in

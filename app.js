@@ -18,7 +18,7 @@ var userRoutes = require('./routes/user');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost:27017/shopDB');
+mongoose.connect('mongodb://localhost:27017/shop');
 require('./config/passport');
 
 // view engine setup
@@ -37,7 +37,7 @@ app.use(session({
   resave: false, 
   saveUninitialized: false,
   store: new mongoStore( { mongooseConnection: mongoose.connection }),
-  cookie: { maxAge: 5 * 60 * 1000} //after 5 minutes the session expires
+  cookie: { maxAge: 10 * 60 * 1000} //after 5 minutes the session expires
 }));
 app.use(flash());
 app.use(passport.initialize());

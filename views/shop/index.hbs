@@ -1,9 +1,15 @@
+<div class="row d-flex justify-content-center">
+<div class="col-sm-6 col-md-4">
+    <div id="success" class="alert alert-success" {{#if noMessages }}hidden{{/if}}>
+        {{successMsg}}
+    </div>
+  </div>
+</div>
 <!-- Product containers -->
 {{# each products }}
   <div class="row">
     <!-- Products-->
     {{# each this }}
-    
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
           <img src="{{ this.imagePath }}"  id="changeColor" alt="..." class="img-responsive">

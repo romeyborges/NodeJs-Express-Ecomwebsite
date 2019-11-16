@@ -6,11 +6,13 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "This is an": "e-commerce website",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^3.1.2",
     "cookie-parser": "~1.4.4",
+    "created by": "Romanus Njogu Borges-@romeyborges",
     "crypto": "^1.0.1",
     "csurf": "^1.10.0",
     "debug": "~2.6.9",
@@ -24,8 +26,6 @@
     "morgan": "~1.9.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "This is an": "e-commerce website",
-    "created by": "Romanus Njogu Borges-@romeyborges"
+    "stripe": "^7.13.0"
   }
 }
-

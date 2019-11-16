@@ -7,10 +7,7 @@
             {{#each products}}
                 <li class="list-group-item">
                     <a href="#" class="badge badge-dark">{{this.qty}}</a>
-                    <strong>
-                        {{this.item.title}}
-                    </strong>
-                    
+                    <strong>{{this.item.title}}</strong>
                     <span class="label rounded text-white p-1 bg-success">${{this.price}}</span>
                     <div class="btn-group float-right">
                         <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action <span class="caret"></span></button>

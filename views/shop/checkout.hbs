@@ -1,64 +1,139 @@
-<div class="row d-flex justify-content-center">
-    <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
-        <h1 class="text-center">Checkout</h1>
-        <h4>Your Total: ${{total}}</h4>
-        <div id="charge-error" class="alert alert-danger" {{#if noError}}hidden{{/if}}>
-            {{errMsg}}
-        </div>
-        <form action="/checkout" method="post" id="checkout-form">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" class="form-control" required name="name">
-                    </div>
-                </div>
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="address">Address</label>
-                        <input type="text" id="address" class="form-control" required name="address">
-                    </div>
-                </div>
-                <hr>
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="card-name">Card Holder Name</label>
-                        <input type="text" id="card-name" class="form-control" required>
-                    </div>
-                </div>
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="card-number">Credit Card Number</label>
-                        <input type="text" id="card-number" class="form-control" required>
-                    </div>
-                </div>
-                <div class="col-xs-12">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <div class="form-group">
-                                <label for="card-expiry-month">Expiration Month</label>
-                                <input type="text" id="card-expiry-month" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-xs-6">
-                            <div class="form-group">
-                                <label for="card-expiry-year">Expiration Year</label>
-                                <input type="text" id="card-expiry-year" class="form-control" required>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="card-cvc">CVC</label>
-                        <input type="text" id="card-cvc" class="form-control" required>
-                    </div>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-success">Buy now</button>
-        </form>
-    </div>
+<div>
+    <h1 class="text-center">Checkout</h1>
 </div>
+<div class="row d-flex justify-content-center">
+<div class="col-sm-6 col-md-4">
+    <div id="charge-error" class="alert alert-danger" {{#if noError}}hidden{{/if}}>
+        {{errMsg}}
+    </div>
+  </div>
+</div>
+
+<div class="tab">
+  <button class="tablinks float-left" onclick="openCity(event, 'card')">CARD</button>
+  <button class="tablinks float-right" onclick="openCity(event, 'cod')">CASH ON DELIVERY</button>
+</div>
+
+<div id="card" class="tabcontent text-center">
+  <h3>CARD</h3>
+  <div class="round-card">
+      <div class="left-half float-left">
+          <p>Order Summary</p>
+          <hr>
+          {{#each products}}
+            <div class="productsOrdered">
+                    <div class="box-left">
+                        <img src="{{ this.item.imagePath }}"  id="item" alt="..." style="height:60px; width:60px" class="img-responsive">
+                    </div>
+                    <div class="box-right-bottom">
+                        <a href="#" class="badge badge-dark">{{this.qty}}</a>
+                        <strong>{{this.item.title}}</strong>
+                        <span class="label rounded text-white p-1 bg-success float-right">${{this.price}}</span>
+                    </div><hr>
+            </div>
+          {{/each}}
+        <div class="subTotals">
+              <h4 class="float-left">TOTAL</h4>
+              <h4 class="float-right">${{total}}</h4>
+          </div><br> 
+      </div>
+       
+      <div class="right-half">
+          <img src='https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png' height='80' class='credit-card-image' id='credit-card-image'></img>
+          <form action="/checkout" method="post" id="checkout-form">
+            <div class="fields text-left">
+                Card Holder Name
+                <input type="text" id="card-name" class="form-control" required>
+            </div>
+            <div class="fields text-left">
+                Credit Card Number
+                <input type="text" id="card-number" class="form-control" required>
+            </div>
+            <div class="fields">
+                <table class='half-input-table text-left'>
+                    <tr>
+                        <td>
+                            Expiry Month
+                            <input type="text" id="card-expiry-month" class="form-control" required>
+                        </td>
+                        <td>
+                            Expiry Year
+                            <input type="text" id="card-expiry-year" class="form-control" required>
+                        </td>
+                        
+                        <td>
+                            CVC
+                            <input type="text" id="card-cvc" class="form-control" required>
+                        </td>
+                    </tr>
+                </table>
+            </div><br>
+            <div class="btn-field">
+                <button type="submit" class="btn btn-success">Buy now</button>
+            </div>
+          </form>
+      </div>
+  </div><br>
+</div>
+
+<div id="cod" class="tabcontent text-center">
+  <h3>CASH ON DELIVERY</h3>
+  <p>Kindly provide your personal details for delivery of the product(s)</p>
+  <form action="/shop/checkout" method="post">
+                        {{#if hasErrors }}
+                        <div class="alert alert-danger">
+                            {{#each messages }}
+                                <p>{{this}}</p>
+                            {{/each}}
+                        </div>
+                        {{/if}}
+                    <!-- Input email -->
+                    <div class="md-form">
+                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <input type="email" id="email materialFormCardEmailEx" name="email" placeholder="Enter your Email" class="form-control" required>
+                        <label for="materialFormCardEmailEx" class="font-weight-light">Email address</label>
+                    </div>
+                    <div class="md-form">
+                        <i class="fa fa-lock prefix grey-text"></i>
+                        <input type="tel" id="tel materialFormCardTelEx" name="tel" placeholder="Enter your Phone Number" class="form-control" required>
+                        <label for="materialFormCardAddressEx" class="font-weight-light">Phone Number</label>
+                    </div>
+                    <div class="md-form">
+                        <i class="fa fa-lock prefix grey-text"></i>
+                        <input type="address" id="address materialFormCardAddressEx" name="address" placeholder="Enter your Address" class="form-control" required>
+                        <label for="materialFormCardAddressEx" class="font-weight-light">Shipping Address</label>
+                    </div>
+                    
+
+                    <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+                    <div class="text-center py-4 mt-3">
+                        
+                        <a href="/user/page" class="btn btn-outline-dark" type="submit">Place Order</a>
+                    </div>
+                </form>
+</div>
+<!--
+<script>
+function openWin() {
+  window.open("https://www.w3schools.com");
+}
+<button type="submit" value="Open Window" onclick="openWin()"> Submit</button>
+
+Field1: <input type="text" id="field1" value="Hello World!"><br>
+Field2: <input type="text" id="field2"><br><br>
+<button onclick="myFunction()">copy</button>
+
+function myFunction() {
+    var myWindow = window.open("/user/page",);
+    me = document.getElementById("field2").value;
+    you = document.getElementById("field1").value;
+
+    myWindow.me = you;
+    
+}
+
+
+</script>-->
 
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript" src="javascripts/checkout.js"></script> 
@@ -70,7 +145,7 @@
 
 
 
-
+        
 
 
 

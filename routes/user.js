@@ -77,6 +77,24 @@ router.post('/signin', passport.authenticate('local.signin', {
 });
 
 
+router.get('/page', function(req, res, next) {
+    var messages = req.flash('error');
+    res.render('user/page', {csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0});
+});
+
+router.post('/checkout', passport.authenticate('local.signup', {
+    failureRedirect: '/shop/checkout',
+    failureFlash: true
+}), function (req, res, next) {
+    if (req.session.oldUrl) {
+        var oldUrl = req.session.oldUrl;
+        req.session.oldUrl = null;
+        res.redirect(oldUrl);
+    } else {
+        res.redirect('/user/page');
+    }
+});
+
 module.exports = router;
 
 //checks if user is logged in

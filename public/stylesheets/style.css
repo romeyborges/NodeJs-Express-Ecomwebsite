@@ -46,21 +46,46 @@
   width: 50%;
   transform: rotateY(180deg);
 }
+.box-left {
+  float: left;
+}
+#item {
+  height: 200px;
+  width: 200px;
+}
+.box-right-top {
+  height: 100px;
+  width: 100%;
+}
+.box-right-bottom {
+  padding-top: 3em;
+  height: 100px;
+  width: 100%;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.dropdown-menu {
+  background-color: royalblue;
+}
+.dropdown-menu li a {
+  color: white;
+}
+.btn btn-success {
+  background-color: #28a745;
+}
+.box-full {
+  height: 200px;
+  width: 100%;
+}
+#pic {
+  height: 50px;
+  width: 50px;
+}
+.panel-footer {
+  text-align: right;
+}
+#outter-list-group {
+  background-color: #28a745;
+}
 
 
 

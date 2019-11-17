@@ -2,24 +2,31 @@
 {{#if products }}
 
 <div class="row d-flex justify-content-center">
-      <div class="col-sm-6 col-md-6 col-md-offset-3 ">
-          <ul class="list-group">
+    <div class="col-sm-6 col-md-6 col-md-offset-3 ">
+        <ul class="list-group">
             {{#each products}}
                 <li class="list-group-item">
-                    <a href="#" class="badge badge-dark">{{this.qty}}</a>
-                    <strong>{{this.item.title}}</strong>
-                    <span class="label rounded text-white p-1 bg-success">${{this.price}}</span>
-                    <div class="btn-group float-right">
-                        <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li><a href="/reduce/{{this.item._id}}">Reduce by 1</a></li>
-                            <li><a href="/remove/{{this.item._id}}">Remove All</a></li>
-                        </ul>
+                    <div class="box-left">
+                        <img src="{{ this.item.imagePath }}"  id="item" alt="..." class="img-responsive">
                     </div>
+                    <div class="box-right-top">
+                        <div class="btn-group float-right">
+                            <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="/reduce/{{this.item._id}}">Reduce by 1</a></li>
+                                <li><a href="/remove/{{this.item._id}}">Remove All</a></li>
+                            </ul>
+                        </div> 
+                    </div>
+                    <div class="box-right-bottom">
+                        <a href="#" class="badge badge-dark">{{this.qty}}</a>
+                        <strong>{{this.item.title}}</strong>
+                        <span class="label rounded text-white p-1 bg-success float-right">${{this.price}}</span>
+                    </div>
+                    
             {{/each}}
-              
-          </ul>
-      </div>
+        </ul>
+    </div>
 </div>
 <div class="row d-flex justify-content-center">
       <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">

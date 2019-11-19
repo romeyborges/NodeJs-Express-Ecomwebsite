@@ -119,6 +119,4 @@ passport.use('local.signin', new localStrategy({
 
 
 
-
-
 //This is an e-commerce website created by Romanus Njogu Borges --- @romeyborges. 

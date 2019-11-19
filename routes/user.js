@@ -62,7 +62,7 @@ router.get('/signin', function(req, res, next) {
     res.render('user/signin', {csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0});
 });
   
-//creatinng authentication for sign in page
+//creating authentication for sign in page
 router.post('/signin', passport.authenticate('local.signin', {
     failureRedirect: '/user/signin',
     failureFlash: true
@@ -77,23 +77,6 @@ router.post('/signin', passport.authenticate('local.signin', {
 });
 
 
-router.get('/page', function(req, res, next) {
-    var messages = req.flash('error');
-    res.render('user/page', {csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0});
-});
-
-router.post('/checkout', passport.authenticate('local.signup', {
-    failureRedirect: '/shop/checkout',
-    failureFlash: true
-}), function (req, res, next) {
-    if (req.session.oldUrl) {
-        var oldUrl = req.session.oldUrl;
-        req.session.oldUrl = null;
-        res.redirect(oldUrl);
-    } else {
-        res.redirect('/user/page');
-    }
-});
 
 module.exports = router;
 
@@ -112,6 +95,8 @@ function notLoggedIn(req, res, next) {
     }
     res.redirect('/');
 }
+
+
 
 
 

@@ -143,6 +143,8 @@
 }
 .right-half{
   background: #4488dd;
+  border-bottom-right-radius: 16px;
+  border-top-right-radius: 16px;
   float: right;
   width: 50%;
   height: 100%;
@@ -160,10 +162,34 @@
   width: 100%;
   float: left;
 }
-
-
-
-
+.con {
+  background-color: #4488dd;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 2em;
+  height: 500px;
+  width: 100%;
+}
+p {
+  text-align: center;
+  font-weight: bolder;
+  font-size: large;
+}
+#csrf {
+  color: red;
+}
+.leftC {
+  padding: 4em;
+  height: 100%;
+  width: 50%;
+}
+.tokenCOD {
+  padding: 5em;
+  height: 100%;
+  width: 50%;
+  text-align: center;
+  font-weight: bold;
+}
 
 
 

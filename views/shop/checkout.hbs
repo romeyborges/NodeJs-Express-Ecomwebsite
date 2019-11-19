@@ -69,7 +69,7 @@
                 </table>
             </div><br>
             <div class="btn-field">
-                <button type="submit" class="btn btn-success">Buy now</button>
+                <input type="submit" class="btn btn-success" value="Buy now">
             </div>
           </form>
       </div>
@@ -79,61 +79,16 @@
 <div id="cod" class="tabcontent text-center">
   <h3>CASH ON DELIVERY</h3>
   <p>Kindly provide your personal details for delivery of the product(s)</p>
-  <form action="/shop/checkout" method="post">
-                        {{#if hasErrors }}
-                        <div class="alert alert-danger">
-                            {{#each messages }}
-                                <p>{{this}}</p>
-                            {{/each}}
-                        </div>
-                        {{/if}}
-                    <!-- Input email -->
-                    <div class="md-form">
-                        <i class="fa fa-envelope prefix grey-text"></i>
-                        <input type="email" id="email materialFormCardEmailEx" name="email" placeholder="Enter your Email" class="form-control" required>
-                        <label for="materialFormCardEmailEx" class="font-weight-light">Email address</label>
-                    </div>
-                    <div class="md-form">
-                        <i class="fa fa-lock prefix grey-text"></i>
-                        <input type="tel" id="tel materialFormCardTelEx" name="tel" placeholder="Enter your Phone Number" class="form-control" required>
-                        <label for="materialFormCardAddressEx" class="font-weight-light">Phone Number</label>
-                    </div>
-                    <div class="md-form">
-                        <i class="fa fa-lock prefix grey-text"></i>
-                        <input type="address" id="address materialFormCardAddressEx" name="address" placeholder="Enter your Address" class="form-control" required>
-                        <label for="materialFormCardAddressEx" class="font-weight-light">Shipping Address</label>
-                    </div>
-                    
-
-                    <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-                    <div class="text-center py-4 mt-3">
-                        
-                        <a href="/user/page" class="btn btn-outline-dark" type="submit">Place Order</a>
-                    </div>
-                </form>
+  <div class="text-center py-4 mt-3">
+      <form action="/checkout" method="post" id="check">
+         <a href="/cod" type="submit" class="btn btn-success"> Order </a>
+      </form>
+     
+  </div>
+                
 </div>
-<!--
-<script>
-function openWin() {
-  window.open("https://www.w3schools.com");
-}
-<button type="submit" value="Open Window" onclick="openWin()"> Submit</button>
-
-Field1: <input type="text" id="field1" value="Hello World!"><br>
-Field2: <input type="text" id="field2"><br><br>
-<button onclick="myFunction()">copy</button>
-
-function myFunction() {
-    var myWindow = window.open("/user/page",);
-    me = document.getElementById("field2").value;
-    you = document.getElementById("field1").value;
-
-    myWindow.me = you;
-    
-}
 
 
-</script>-->
 
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript" src="javascripts/checkout.js"></script> 

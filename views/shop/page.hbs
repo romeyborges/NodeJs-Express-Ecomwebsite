@@ -1,0 +1,85 @@
+<div class="row d-flex justify-content-center">
+<div class="col-sm-6 col-md-4">
+    <h1>Page</h1>
+    <div id="success" class="alert alert-success" {{#if noMessages }}hidden{{/if}}>
+        {{successMsg}}
+    </div>
+    <form action="/page" method="post" id="cod">
+      {{#if hasErrors }}
+        <div class="alert alert-danger">
+          {{#each messages }}
+            <p>{{this}}</p>
+          {{/each}}
+        </div>
+      {{/if}}
+      <!-- Input email -->
+      <div class="md-form">
+        <i class="fa fa-envelope prefix grey-text"></i>
+        <input type="email" id="email materialFormCardEmailEx" name="email" placeholder="Enter your Email" class="form-control" required>
+        <label for="materialFormCardEmailEx" class="font-weight-light">Email address</label>
+      </div>
+      <!-- Input number -->
+      <div class="md-form">
+        <i class="fa fa-lock prefix grey-text"></i>
+        <input type="tel" id="tel materialFormCardTelEx" name="tel" placeholder="Enter your Phone Number" class="form-control" required>
+        <label for="materialFormCardAddressEx" class="font-weight-light">Phone Number</label>
+      </div>
+      <!-- Input address -->
+      <div class="md-form">
+        <i class="fa fa-lock prefix grey-text"></i>
+        <input type="address" id="address materialFormCardAddressEx" name="address" placeholder="Enter your Address" class="form-control" required>
+        <label for="materialFormCardAddressEx" class="font-weight-light">Shipping Address</label>
+      </div>
+                    
+      <label for="" id="l1">hello</label>
+      <label for="" id="l2">hi</label>
+      <label for="" id="l3">h</label>
+
+      <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+      <div class="text-center py-4 mt-3">
+        <button type="submit"> Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- This is an e-commerce system created by Romanus Njogu Borges - @romeyborges -->

@@ -76,7 +76,13 @@ router.post('/signin', passport.authenticate('local.signin', {
     }
 });
 
+router.get('/cod',function(req, res, next) {
+    res.render('user/cod', {csrfToken: req.csrfToken()});
+});
 
+router.post('/cod', function(req, res, next) {
+    res.redirect('/')
+});
 
 module.exports = router;
 

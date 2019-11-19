@@ -37,29 +37,44 @@
       </div>
     </form>
   </div>
+  <form name="myform">
     <div class="tokenCOD float-right">
-        <div> <label for="" id="l1"></label> </div>              
-        <div> <label for="" id="l2"></label> </div>  
-        <div> <label for="" id="l3"></label> </div>   
-        <div> <a hidden id="csrf" name="_csrf">{{ csrfToken }}</a> </div>
+        <div> Email: <label for="" id="l1"></label> </div>              
+        <div> Phone: <label for="" id="l2"></label> </div>  
+        <div> Address: <label for="" id="l3"></label> </div>   
+        <div> Token: <a hidden id="csrf" name="_csrf">{{ csrfToken }}</a> </div>
+        <div> Date: <p id="date"></p> </div>
+        <div class="text-center py-4 mt-3">
+          <input type="button" value="Save" name="text_area" onclick="save()" class="btn btn-primary">
+      </div>
     </div>
+  </form>
   </div>
 </div>
 
 <script>
     function myfunction() {
-        var phone = document.getElementById('l1').innerHTML = document.getElementById('tel').value;
-        var email = document.getElementById('l2').innerHTML = document.getElementById('email').value;
-        var address = document.getElementById('l3').innerHTML = document.getElementById('address').value;
-        if ((phone == "") || (email == "") && (address = "")){
-            alert("Please fill out the form with valid input.");
-            return false;
-        }
-        else{
-            document.getElementById("csrf").removeAttribute("hidden");
-            document.getElementById("text-center").removeAttribute("hidden");
-            return true; 
-        }
+      var address = document.getElementById('l3').innerHTML = document.getElementById('address').value;
+      var phone = document.getElementById('l2').innerHTML = document.getElementById('tel').value;
+      var email = document.getElementById('l1').innerHTML = document.getElementById('email').value;
+        
+      if ((address == "") || (email == "") && (phone = "")) {
+          alert("Please fill out all the fields.");
+          return false;
+      }
+      else{
+          document.getElementById('date').innerHTML = Date();
+          document.getElementById("csrf").removeAttribute("hidden");
+          document.getElementById("text-center").removeAttribute("hidden");
+          return true; 
+      }
+    }
+    function save() {
+      val = document.myform.text_area.value; 
+      mydoc = document.open(); 
+      mydoc.write(val); 
+      mydoc.execCommand("saveAs",true,".txt"); //you can change the .txt to your extention
+      history.go(-1);
     }
 </script>
 

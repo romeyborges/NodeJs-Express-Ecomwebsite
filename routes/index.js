@@ -1,12 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var Cart = require('../models/cart');
-var csrf = require('csurf');
 var Product = require('../models/product');
 var Order = require('../models/order');
 
-var csrfProtection = csrf();
-router.use(csrfProtection);
 
 //gets home page
 router.get('/', function(req, res, next) {
@@ -85,7 +82,7 @@ router.post('/checkout', isLoggedIn, function(req, res, next) {
 
   var stripe = require("stripe")("sk_test_4lyXGXTQg0UKiqMFlSeQL17I00MCVCFjjV");
 
-  stripe.charges.create({
+    stripe.charges.create({
       amount: cart.totalPrice * 100,
       currency: "usd",
       source: req.body.stripeToken, // obtained with Stripe.js
@@ -107,15 +104,6 @@ router.post('/checkout', isLoggedIn, function(req, res, next) {
       });
   }); 
 });
-
-router.get('/cod',function(req, res, next) {
-    res.render('shop/cod', {csrfToken: req.csrfToken()});
-});
-
-router.post('/cod', function(req, res, next) {
-    res.redirect('/')
-  });
-
 
 module.exports = router;
 
